@@ -1,48 +1,16 @@
 {
   "name": "@versoly/cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "CLI to sync your local files from Versoly API",
-  "sideEffects": false,
-  "type": "module",
-  "exports": {
-    ".": "./dist/index.mjs",
-    "./package.json": "./package.json"
-  },
-  "main": "./dist/index.mjs",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.mts",
-  "files": [
-    "*.d.ts",
-    "*.js",
-    "bin",
-    "dist"
-  ],
-  "bin": {
-    "versoly": "./dist/index.js"
-  },
-  "preferGlobal": true,
-  "scripts": {
-    "build": "tsdown",
-    "dev": "tsdown --watch",
-    "start": "node ./dist/index.js",
-    "cm": "cz",
-    "clean": "rimraf lib",
-    "lint": "eslint src",
-    "prepare": "is-ci || husky",
-    "semantic-release": "semantic-release",
-    "test": "vitest run --coverage"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/versoly/cli.git"
-  },
+  "homepage": "https://github.com/versoly/cli#readme",
   "license": "MIT",
   "author": {
     "name": "Versoly",
     "url": "https://github.com/versoly"
   },
-  "engines": {
-    "node": ">=22.18.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/versoly/cli.git"
   },
   "keywords": [
     "boilerplate"
@@ -50,7 +18,37 @@
   "bugs": {
     "url": "https://github.com/versoly/cli/issues"
   },
-  "homepage": "https://github.com/versoly/cli#readme",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./cli": "./dist/cli.mjs",
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "files": [
+    "dist"
+  ],
+  "bin": {
+    "versoly": "./dist/cli.mjs"
+  },
+  "preferGlobal": true,
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "versoly": "versoly ./src/cli.ts",
+    "cm": "cz",
+    "clean": "rimraf lib",
+    "lint": "eslint src",
+    "prepare": "is-ci || husky",
+    "semantic-release": "semantic-release",
+    "test": "vitest run --coverage"
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  },
   "dependencies": {
     "@kson_org/kson": "^0.1.1",
     "@versoly/ast": "^0.0.2",

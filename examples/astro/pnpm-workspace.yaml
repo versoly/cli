@@ -1,2 +1,2 @@
-overrides:
-  "@versoly/cli": link:../../../../../.local/share/pnpm/global/5/node_modules/@versoly/cli
+ignoredBuiltDependencies:
+  - '@swc/core'

@@ -1,0 +1,9 @@
+name: metaTagsToString
+type: 'registry:lib'
+title: 'Meta Tags to String Converter'
+description: 'A utility to convert meta tags objects to HTML string format.'
+files:
+  - path: 'utils/metaTagsToString.ts'
+    type: 'registry:lib'
+    target: '~/utils/metaTagsToString.ts'
+    .

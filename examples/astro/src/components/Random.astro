@@ -1,0 +1,43 @@
+---
+import { $d } from "../utils/date";
+
+interface Props {
+  header?: string;
+  subheader?: string;
+  useH2Tag?: boolean;
+  classNames?: IClassNames;
+}
+interface IClassNames {
+  root?: string;
+  header?: string;
+}
+
+const {
+  header = "Header",
+  subheader = "Subheader",
+  useH2Tag = false,
+} = Astro.props;
+const classNames = {
+  ...Astro.props.classNames,
+  root: "py-20",
+};
+---
+
+<section class:list={classNames.root}>
+  {
+    !useH2Tag && (
+      <h1 class:list={classNames.header}>
+        {header}
+      </h1>
+    )
+  }
+  {
+    useH2Tag && (
+      <h2 class:list={classNames.header}>
+        {header}
+      </h2>
+    )
+  }
+  <p>{subheader}</p>
+  <p>{$d(new Date())}</p>
+</section>

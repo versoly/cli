@@ -1,0 +1,7 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Tailwind v4 does not play well with component/utility layers, fix is to inline vs import, also enables use of primary */
+/* https://github.com/tailwindlabs/tailwindcss-forms/issues/162#issuecomment-3587908303 */
+@import "./versoly-forms.css";
+@import "./versoly.css";

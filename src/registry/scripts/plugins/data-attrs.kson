@@ -1,0 +1,33 @@
+name: 'versoly-data-attrs'
+type: 'registry:lib'
+title: 'Versoly data attributes for plugins'
+description: 'A library to enable plugins using data attributes on elements.'
+files:
+  - path: 'scripts/plugins/data-attrs.ts'
+    type: 'registry:lib'
+    target: '~/scripts/plugins/data-attrs.ts'
+    content: %js
+      window.vDelayed = {};
+      window.vLoadedDelayed = {};
+
+      window.vGetElementsByToggle = (toggleName) => {
+        const query = '[data-toggle="' + toggleName + '"]';
+        return [...document.querySelectorAll(query)];
+      };
+
+      window.vGetElementOptions = (elem) => {
+        let options = {};
+
+        try {
+          if (elem.dataset.options) {
+            options = elem.dataset.options.split("'").join('"');
+            options = JSON.parse(options);
+          }
+        } catch (err) {
+          console.log(err);
+          options = {};
+        }
+
+        return options;
+      };
+              %%

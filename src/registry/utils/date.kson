@@ -1,0 +1,24 @@
+name: dateFormatter
+type: 'registry:lib'
+title: 'Date Formatter'
+description: 'A simple date formatter util for Astro.'
+files:
+  - path: 'utils/date.ts'
+    type: 'registry:lib'
+    target: '~/utils/date.ts'
+    content: %js
+      export const $d = (
+        rawDate: string | Date,
+        options?: Intl.DateTimeFormatOptions,
+        locale?: string,
+      ) => {
+        let date = new Date(rawDate);
+        options = options || {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        };
+        locale = locale || "en-US";
+        return new Intl.DateTimeFormat(locale, options).format(date);
+      };
+                %%

@@ -1,0 +1,108 @@
+{
+  "name": "@versoly/cli",
+  "version": "0.1.0",
+  "description": "CLI to sync your local files from Versoly API",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "files": [
+    "*.d.ts",
+    "*.js",
+    "bin",
+    "dist"
+  ],
+  "bin": {
+    "versoly": "./dist/index.js"
+  },
+  "preferGlobal": true,
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch",
+    "start": "node ./dist/index.js",
+    "cm": "cz",
+    "clean": "rimraf lib",
+    "lint": "eslint src",
+    "prepare": "is-ci || husky",
+    "semantic-release": "semantic-release",
+    "test": "vitest run --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/versoly/cli.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Versoly",
+    "url": "https://github.com/versoly"
+  },
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "keywords": [
+    "boilerplate"
+  ],
+  "bugs": {
+    "url": "https://github.com/versoly/cli/issues"
+  },
+  "homepage": "https://github.com/versoly/cli#readme",
+  "dependencies": {
+    "@kson_org/kson": "^0.1.1",
+    "@versoly/ast": "^0.0.2",
+    "@versoly/plugins": "^0.0.11",
+    "commander": "^12.1.0",
+    "consola": "^3.2.3",
+    "dotenv": "^16.4.5",
+    "fs-extra": "^11.3.2",
+    "giget": "^1.2.3",
+    "htmlparser2": "^9.1.0",
+    "jiti": "^2.6.1",
+    "picocolors": "^1.0.1",
+    "prettier": "^3.2.5",
+    "versoly-js-client": "^0.0.3",
+    "yargs": "^17.7.2",
+    "zod": "^4.2.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.2.1",
+    "@commitlint/config-conventional": "^19.1.0",
+    "@hey-api/openapi-ts": "0.52.3",
+    "@kainstar/eslint-config": "^1.1.1",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^12.0.0",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/github": "^10.0.2",
+    "@semantic-release/npm": "^12.0.0",
+    "@semantic-release/release-notes-generator": "^12.1.0",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.17.2",
+    "@types/yargs": "^17.0.33",
+    "@vitest/coverage-v8": "^4.0.16",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "npm:eslint-ts-patch@8.56.0-0",
+    "eslint-ts-patch": "8.57.0-0",
+    "husky": "^9.0.11",
+    "is-ci": "^3.0.1",
+    "lint-staged": "^15.2.2",
+    "rimraf": "^5.0.5",
+    "semantic-release": "^23.0.5",
+    "tsdown": "^0.18.4",
+    "type-fest": "^4.26.1",
+    "typescript": "^5.9.2",
+    "vitest": "^4.0.16"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

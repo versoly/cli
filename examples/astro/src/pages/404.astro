@@ -1,0 +1,46 @@
+---
+import Image from "astro/components/Image.astro";
+import PageLayout from "@/layouts/PageLayout.astro";
+import type { PageMetaProps } from "@/utils/metaTagsToString";
+
+const metaData: PageMetaProps = {
+  title: "Home page",
+  description: "okay",
+  url: "",
+  metaTags: [
+    {
+      field: "property",
+      value: "og:title",
+      content: "home",
+    },
+    {
+      field: "property",
+      value: "og:description",
+      content: "page",
+    },
+  ],
+  head: "",
+  scripts: "",
+  bodyProperties: {
+    id: "",
+    className: "bg-primary-200/40",
+  },
+};
+---
+
+<PageLayout {...metaData}>
+  <main class="container mx-auto">
+    <section class="flex flex-col items-center justify-center h-[60dvh]">
+      <Image
+        src="/images/db204aff-2783-412a-9f3d-8ff54d267d9f.png"
+        alt="spark logo"
+        width="600"
+        height="600"
+      />
+      <div class="flex">
+        <span class="fancy text-8xl font-bold">404</span>
+      </div>
+      <span class="fancy text-3xl font-bold">not found</span>
+    </section>
+  </main>
+</PageLayout>

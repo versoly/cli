@@ -1,0 +1,42 @@
+---
+import { SITE_CONFIG as site } from "@/config/site.mjs";
+import BaseHead from "@/components/BaseHead.astro";
+import type { PageMetaProps } from "@/utils/metaTagsToString";
+
+type Props = PageMetaProps;
+
+const metaData: PageMetaProps & { url: string } = {
+  title: Astro.props.title || site.title,
+  description: Astro.props.description || site.description,
+  lang: Astro.props.lang || site.lang || "en",
+  favicon: Astro.props.favicon || site.favicon,
+  metaTags: Astro.props.metaTags,
+  url: Astro.url.href || "",
+  bodyProperties: Astro.props.bodyProperties || {},
+};
+
+const { head, scripts, bodyProperties } = Astro.props;
+const { lang } = metaData;
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <BaseHead site={site} obj={metaData} />
+    <Fragment set:html={site.head} />
+    <Fragment set:html={head} />
+  </head>
+  <body {...bodyProperties}>
+    <script>
+      import "@/scripts/plugins/data-attrs.js";
+    </script>
+
+    <slot />
+
+    <Fragment set:html={site.scripts} />
+    <Fragment set:html={scripts} />
+    <script>
+      import "versoly-ui";
+    </script>
+  </body>
+</html>

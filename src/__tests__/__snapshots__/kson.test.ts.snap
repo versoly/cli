@@ -1,0 +1,30 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`KSON parse 1`] = `
+{
+  "anotherKey": {
+    "nestedArray": [
+      true,
+      false,
+      null,
+    ],
+    "nestedKey": "value",
+  },
+  "astro": {
+    "embedContent": "<div></div>
+",
+    "embedTag": "html",
+  },
+  "content": {
+    "embedContent": "<div></div>
+",
+    "embedTag": "jsx",
+  },
+  "key": [
+    1,
+    2,
+    3,
+    4,
+  ],
+}
+`;

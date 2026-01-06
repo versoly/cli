@@ -33,4 +33,4 @@ versoly sync
 
 ## Inspiration
 
-- ([ajv](https://raw.githubusercontent.com/ajv-validator/ajv/refs/heads/master/CONTRIBUTING.md))
+- [ajv](https://raw.githubusercontent.com/ajv-validator/ajv/refs/heads/master/CONTRIBUTING.md)

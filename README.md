@@ -13,9 +13,9 @@
 
 ## Inspiration
 
-[Shadcn registry](https://github.com/shadcn-ui/ui/blob/main/packages/shadcn/src/commands/add.ts)
-[CLI TypeScript Starter](https://github.com/kucherenko/cli-typescript-starter)
-[Astroplate](https://github.com/zeon-studio/astroplate)
+- [Shadcn registry](https://github.com/shadcn-ui/ui/blob/main/packages/shadcn/src/commands/add.ts)
+- [CLI TypeScript Starter](https://github.com/kucherenko/cli-typescript-starter)
+- [Astroplate](https://github.com/zeon-studio/astroplate)
 
 [build-img]: https://github.com/versoly/cli/actions/workflows/release.yml/badge.svg
 [build-url]: https://github.com/versoly/cli/actions/workflows/release.yml
